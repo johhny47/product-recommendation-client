@@ -22,7 +22,7 @@ const Registration = () => {
        
       }
     useEffect(()=>{
-      document.title = "Sports | Register"
+      document.title = "Qurery | Register"
      },[])
      
     return (
