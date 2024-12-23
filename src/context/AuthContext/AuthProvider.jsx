@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import auth from '../../../firebase.init';
+import axios from 'axios';
 
 const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider()
-    // const [user,setUser] = useState(null)
+    const [user,setUser] = useState(null)
 
     const handleGoogleLogin =()=>{
         return signInWithPopup(auth, googleProvider)
@@ -19,13 +20,50 @@ const AuthProvider = ({children}) => {
         const handleLogin = (email,passward)=>{
           return signInWithEmailAndPassword(auth,email,passward)
         }
-
+        const mannageProfile =(name,image)=>{
+                 
+          return updateProfile(auth.currentUser,{
+              displayName:name,photoURL:image
+             
+          } 
+        )
+        
+        }
+        const handleLogout=()=>{
+          signOut(auth)
+         }
+         useEffect(()=>{
+          const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+           
+                if(currentUser?.email){
+                  setUser(currentUser)
+                  const user={email:currentUser.email}
+                  axios.post(`${import.meta.env.VITE_API_URL}/jwt`,user,{
+                    withCredentials:true
+                  })
+                }
+                else{
+                  axios.post(`${import.meta.env.VITE_API_URL}/logout`,{},{
+                    withCredentials:true
+                  })
+                  .then(res=>console.log('logout',res.data))
+                  setUser(null)
+                }
+              return ()=>{
+                  unsubscribe 
+              }
+          })
+        },[])
         
 
   const authInfo={
         handleGoogleLogin,
         handleRegister,
-        handleLogin 
+        handleLogin ,
+        mannageProfile,
+        handleLogout,
+        user,
+        setUser
     }
     return (
         <AuthContext.Provider value={authInfo}>

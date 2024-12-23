@@ -1,11 +1,24 @@
 import { NavLink } from "react-router-dom";
+import AuthContext from "../../context/AuthContext/AuthContext";
+import { useContext } from "react";
 
 
-const NavBar = () => {
+const Navbar = () => {
+    const {user,handleLogout} =useContext(AuthContext)
+   
     const link = <>
      <NavLink to="/" ><li><a>Home</a></li></NavLink>
-     <NavLink to="/login" ><li><a>Login</a></li></NavLink>
-     <NavLink to="/registration"><li><a>Registration</a></li></NavLink>
+     <NavLink to="/queries"><li><a>Queries</a></li></NavLink>
+    
+     {
+              user ? <div className="lg:flex">
+                 <NavLink to="/recommendationforme"><li><a>Recommendation For Me</a></li></NavLink>
+                 <NavLink to="/myqueries"><li><a>My Queries</a></li></NavLink>
+                 <NavLink to="/myrecommendation"><li><a>My Recommendation</a></li></NavLink>
+                 <NavLink to="/login"><li><a onClick={handleLogout}>Logout</a></li></NavLink>
+                 </div> : <NavLink to="/login" ><li><a>Login</a></li></NavLink>
+             }
+  
 
      </>
     return (
@@ -40,10 +53,13 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+       
+         { user &&  <button className="mx-2">
+        <img src= {user.photoURL} alt="" className="h-10 w-10 rounded-full border-2 border-red-500 " />
+        </button>}
         </div>
       </div>
     );
 };
 
-export default NavBar;
+export default Navbar;
