@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 
 import useAxiosSecure from '../hook/useAxiosSecure';
-import axios from 'axios';
+
 
 const MyQueries = () => {
     const axiosSucure = useAxiosSecure()

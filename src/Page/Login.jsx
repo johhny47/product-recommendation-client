@@ -6,6 +6,7 @@ import AuthContext from "../context/AuthContext/AuthContext";
 
 
 
+
 const Login = () => {
   const navigate = useNavigate()
   const [error,setError] = useState()
@@ -56,6 +57,8 @@ const Login = () => {
        
        
        }}
+
+      
 
       
 

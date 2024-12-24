@@ -4,12 +4,17 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 import auth from '../../../firebase.init';
 import axios from 'axios';
 
+
+
 const AuthProvider = ({children}) => {
+ 
     const googleProvider = new GoogleAuthProvider()
     const [user,setUser] = useState(null)
 
     const handleGoogleLogin =()=>{
+       
         return signInWithPopup(auth, googleProvider)
+        
       }
     const handleRegister =(email,password)=>
         {

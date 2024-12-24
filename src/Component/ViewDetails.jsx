@@ -1,21 +1,34 @@
 import axios from "axios";
-import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import AuthContext from "../context/AuthContext/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 import useAxiosSecure from "../hook/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const ViewDetails = () => {
+  const{id} = useParams()
   const axiosSucure = useAxiosSecure()
-    const data = useLoaderData();
+    // const data = useLoaderData();
+   
     const {user}=useContext(AuthContext);
+    const [Data, setData] = useState([]);
+    useEffect(() => {
+          fetchalldata() 
+      },[id])
+  
+          const fetchalldata =async() =>{
+              const {data}= await axiosSucure.get(`/details/${id}`)
+             setData(data)
+            
+            
+          }
+  
+   
    
 const handleAddRecommendation = async (event) => {
     event.preventDefault(); 
-    
-   
-    
     
     const form = event.target;
     const recomTitle = form.RecomTitle.value;
@@ -23,11 +36,11 @@ const handleAddRecommendation = async (event) => {
     const recomProductImage = form.RecomProductImage.value;
     const recomReason = form.RecomReason.value;
   
-    const queryid = data?._id
-    const QueryTitle=data?.title
-    const productName = data?.name
-    const userEmail = data?.User?.userEmail
-    const userName = data?.User?.userName
+    const queryid = Data?._id
+    const QueryTitle=Data?.title
+    const productName = Data?.name
+    const userEmail = Data?.User?.userEmail
+    const userName = Data?.User?.userName
     const RecommenderEmail =user?.email
     const RecommenderName = user?.displayName
     const timestamp = Date.now();
@@ -38,8 +51,21 @@ const handleAddRecommendation = async (event) => {
       return toast.error("you can not recommend")
 
     const recomData ={ recomTitle, recomProductName, recomProductImage, recomReason,queryid,QueryTitle,productName,userEmail,userName,RecommenderEmail,RecommenderName,RecomcurrentDate};
-    const {Alldata} = await axiosSucure.post(`/recommendation`,recomData)
-    console.log(Alldata)
+    
+      
+        try{
+          const {Alldata} = await axiosSucure.post(`/recommendation`,recomData)
+          console.log(Alldata)
+        Swal.fire({
+          title: 'Added',
+          text: 'Data Add Successfuly',
+          icon: 'Add',
+          confirmButtonText: 'ok'
+        })
+        }
+        catch(error){
+          toast.error(err.message)
+        }
   };
   
 
@@ -47,7 +73,7 @@ const handleAddRecommendation = async (event) => {
         <div>
           <Toaster></Toaster>
            <div>
-           <h1>view details{data.name}</h1>
+           <h1>view details</h1>
            </div>
             <div>
             <form onSubmit={handleAddRecommendation}>
