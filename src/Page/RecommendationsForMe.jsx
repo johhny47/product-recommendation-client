@@ -33,7 +33,8 @@ const RecommendationsForMe = () => {
           <th>Query</th>
           <th> Recommendate By</th>
           <th>Recommendation Reason</th>
-           <th>Action</th>
+           <th>Tittle</th>
+           <th>Photo</th>
           </tr>
         </thead>
         <tbody>
@@ -43,7 +44,11 @@ const RecommendationsForMe = () => {
                  <th>{idx+1}</th>
                 <td>{data.recomProductName}</td>
                 <td>{data.RecommenderEmail}</td>
+               
                 <td>{data.recomReason}</td>
+                <td>{data.recomTitle}</td>
+               
+                <td><img src={data.recomProductPhoto} alt="" className="w-10 h-10 rounded-full" srcset="" /></td>
                 {/* <td><Link to={`/details/${data._id}`}><button>Details</button></Link></td> */}
               </tr>)
           }

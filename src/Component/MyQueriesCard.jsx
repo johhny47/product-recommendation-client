@@ -5,7 +5,7 @@ const MyQueriesCard = ({data,handleDelete}) => {
     const {_id,name,brand,productImageURL,title,BoycottingReason,User,currentDate}=data;
   
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-blue-200 w-96 shadow-xl">
   <figure>
     <img
       src={productImageURL}
@@ -17,7 +17,7 @@ const MyQueriesCard = ({data,handleDelete}) => {
       <div className="badge badge-secondary">{brand}</div>
     </h2>
     <p>{title}</p>
-    <div className="card-actions justify-end">
+    <div className="card-actions justify-start">
      
       <Link to={`/details/${_id}`} className="badge badge-outline"><a>View Details</a></Link>
       <Link to={`/update/${_id}`} className="badge badge-outline"><a>Update</a></Link>

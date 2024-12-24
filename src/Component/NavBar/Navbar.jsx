@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import { useContext } from "react";
 import "./navbar.css"
+import logo from "../.././assets/logo2.webp"
 
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
 
      </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-sky-500">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +47,9 @@ const Navbar = () => {
               {link}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <img src={logo} alt="" className="w-5 h-5 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full items-center " />
+          <a className="mx-2 text-xl md:text-xl lg:text-3xl font-bold text-white">Recomify</a>
+        
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

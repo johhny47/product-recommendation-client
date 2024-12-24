@@ -27,7 +27,7 @@ const Queries = () => {
     return (
     
    <div>
-    <div>
+    <div className="my-4">
     <label className="input input-bordered max-w-40 mx-auto flex items-center gap-2">
   <input type="text" className="max-w-40" placeholder="Search" name='search' onChange={e=>setSearch(e.target.value)} />
  
