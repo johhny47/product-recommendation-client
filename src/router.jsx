@@ -14,12 +14,14 @@ import AddQueries from "./Component/AddQueries";
 import ViewDetails from "./Component/ViewDetails";
 import Update from './Component/Update';
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ErrorPage from "./Component/ErrorPage";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/login",
