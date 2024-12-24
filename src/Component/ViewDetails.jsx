@@ -70,17 +70,21 @@ const handleAddRecommendation = async (event) => {
   
 
     return (
-        <div>
+        <div className="flex justify-around border-2 border-red-500 bg-sky-400">
           <Toaster></Toaster>
            <div>
-           <h1>view details</h1>
+           <h1 className="text-2xl">{Data.name}</h1>
+           <h1>{Data.brand}</h1>
+           <h1>{Data.title}</h1>
+           <h1></h1>
+           <img src={Data.productImageURL} className="h-10 w-10 rounded-full" alt="" />
            </div>
             <div>
             <form onSubmit={handleAddRecommendation}>
   <div>
     <label>
    
-      <input type="text" name="RecomTitle" placeholder="Recommendation Title" className="input input-bordered w-full max-w-xs" required />
+      <input type="text" name="RecomTitle" placeholder="Recommendation Title" className="input input-bordered w-full max-w-xs my-2" required />
     </label>
   </div>
   <div>
@@ -92,7 +96,7 @@ const handleAddRecommendation = async (event) => {
   <div>
     <label>
     
-      <input type="text" name="RecomProductImage"  placeholder=" Recommended Product Image" className="input input-bordered w-full max-w-xs" required />
+      <input type="text" name="RecomProductImage"  placeholder=" Recommended Product Image" className="input input-bordered w-full max-w-xs my-2" required />
     </label>
   </div>
   <div>
@@ -101,7 +105,7 @@ const handleAddRecommendation = async (event) => {
       <input name="RecomReason"  placeholder="Recommendation Reason" className="input input-bordered w-full max-w-xs" required></input>
     </label>
   </div>
-  <button className="btn btn-primary" type="submit">Submit</button>
+  <button className="btn btn-sm mt-2" type="submit">Submit</button>
 </form>
 
               

@@ -8,15 +8,15 @@ const MyQueriesCard = ({data,handleDelete}) => {
         <div className="card bg-base-100 w-96 shadow-xl">
   <figure>
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      src={productImageURL}
       alt="Shoes" />
   </figure>
   <div className="card-body">
     <h2 className="card-title">
-      Shoes!
-      <div className="badge badge-secondary">NEW</div>
+      {name}
+      <div className="badge badge-secondary">{brand}</div>
     </h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <p>{title}</p>
     <div className="card-actions justify-end">
      
       <Link to={`/details/${_id}`} className="badge badge-outline"><a>View Details</a></Link>

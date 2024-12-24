@@ -99,7 +99,7 @@ const handleAddEquipment =async e =>{
                   <div className="label">
                     <span className="label-text">Image-URL</span>
                   </div>
-                    <input type="text" name="ImageURL"  placeholder="Image URL" defaultValue={productData?.ImageURL}   className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name="ImageURL"  placeholder="Image URL" defaultValue={productData?.productImageURL}   className="input input-bordered w-full max-w-xs" />
                 </label>
                 </div>
                 <div>

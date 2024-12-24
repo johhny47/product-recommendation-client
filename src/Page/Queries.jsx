@@ -28,20 +28,20 @@ const Queries = () => {
  
 </label>
     </div>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-6">
          {
              queries.map(data =><div className="card bg-base-100 w-96 shadow-xl">
                    <figure>
                      <img
-                       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                       src={data.productImageURL}
                        alt="Shoes" />
                    </figure>
                    <div className="card-body">
                      <h2 className="card-title">
                       {data.name}
-                       <div className="badge badge-secondary">NEW</div>
+                       <div className="badge badge-secondary">{data.brand}</div>
                      </h2>
-                     <p>If a dog chews shoes whose shoes does he choose?</p>
+                     <p>{data.title}</p>
                      <div className="card-actions justify-end">
                      <Link to={`/details/${data._id}`} className="badge badge-outline"><a>View Details</a></Link>
                       
