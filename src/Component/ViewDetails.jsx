@@ -90,13 +90,13 @@ const handleAddRecommendation = async (event) => {
   <div>
     <label>
      
-      <input type="text" name="RecomProductName"  placeholder="Recommended Product Name" className="input input-bordered w-full max-w-xs" required />
+      <input type="text" name="RecomProductName"  placeholder="Recom Product Name" className="input input-bordered w-full max-w-xs" required />
     </label>
   </div>
   <div>
     <label>
     
-      <input type="text" name="RecomProductImage"  placeholder=" Recommended Product Image" className="input input-bordered w-full max-w-xs my-2" required />
+      <input type="text" name="RecomProductImage"  placeholder=" Recom Product Image" className="input input-bordered w-full max-w-xs my-2" required />
     </label>
   </div>
   <div>

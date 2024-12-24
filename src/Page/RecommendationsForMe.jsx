@@ -44,7 +44,7 @@ const RecommendationsForMe = () => {
                 <td>{data.recomProductName}</td>
                 <td>{data.RecommenderEmail}</td>
                 <td>{data.recomReason}</td>
-                <td><Link to={`/details/${data._id}`}><button>Details</button></Link></td>
+                {/* <td><Link to={`/details/${data._id}`}><button>Details</button></Link></td> */}
               </tr>)
           }
         

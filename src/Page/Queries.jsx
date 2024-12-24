@@ -8,6 +8,7 @@ const Queries = () => {
     const axiosSucure = useAxiosSecure()
     const [queries, setQueries] = useState([]);
     const [search,setSearch]=useState('')
+    const [gridColumns, setGridColumns] = useState(3); 
     console.log(search)
      useEffect(() => {
             
@@ -19,6 +20,10 @@ const Queries = () => {
       
         }, [search]);
 
+        const updateGridColumns = (columns) => {
+          setGridColumns(columns)
+        }
+
     return (
     
    <div>
@@ -28,22 +33,39 @@ const Queries = () => {
  
 </label>
     </div>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-6">
+    
+      <div className="flex justify-center my-4 gap-2">
+        <button className="btn btn-primary"
+           onClick={() => updateGridColumns(1)}>1 Column</button>
+        <button className="btn btn-primary"
+                    onClick={() => updateGridColumns(2)}>
+                      2 Columns</button>
+          <button className="btn btn-primary"
+                    onClick={() => updateGridColumns(3)}>
+                    3 Columns</button>
+            </div>
+
+     <div className={`grid gap-6 mx-auto ${gridColumns === 1 ? 'grid-cols-1' : gridColumns === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
          {
-             queries.map(data =><div className="card bg-base-100 w-96 shadow-xl">
+             queries.map(data =><div className={`card bg-base-100  shadow-xl flex-1`}>
                    <figure>
                      <img
                        src={data.productImageURL}
+                        className="flex-1 h-32 md:h-36 lg:h-60"
                        alt="Shoes" />
                    </figure>
-                   <div className="card-body">
-                     <h2 className="card-title">
+                   <div className="mx-2 border-1 border-gray-400 md:card-body lg:card-body flex-1">
+                   <div className="badge badge-secondary">{data.recommendationCount}</div>
+                   <div className="badge badge-secondary flex-shrink">{data.brand}</div>
+                     <h2 className="text-sm card-title flex-shrink">
                       {data.name}
-                       <div className="badge badge-secondary">{data.brand}</div>
-                     </h2>
-                     <p>{data.title}</p>
-                     <div className="card-actions justify-end">
-                     <Link to={`/details/${data._id}`} className="badge badge-outline"><a>View Details</a></Link>
+                      </h2> 
+                      
+                    
+                     <p className="font-bold flex-shrink">{data.title}</p>
+                     <p className="text-gray-400 text-sm md:text-xl lg:text-xl">{data.BoycottingReason}</p>
+                     <div className="card-actions justify-start">
+                     <Link to={`/details/${data._id}`} className="badge badge-outline"><a>Recommend</a></Link>
                       
                      </div>
                    </div>

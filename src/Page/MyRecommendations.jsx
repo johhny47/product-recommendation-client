@@ -69,7 +69,7 @@ const MyRecommendations = () => {
            myData.map((data,idx) => <tr className="bg-base-200">
                  <th>{idx+1}</th>
                 <td>{data.productName}</td>
-                <td>{data.RecommenderEmail}</td>
+                <td>{data.userEmail}</td>
              
                 <td>{data.recomReason}</td>
                 <td className="badge badge-outline"> <button onClick={()=>handleDelete(data._id)}>Delete</button></td>
