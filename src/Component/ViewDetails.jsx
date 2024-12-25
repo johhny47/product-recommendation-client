@@ -70,16 +70,28 @@ const handleAddRecommendation = async (event) => {
   
 
     return (
-        <div className="flex justify-around border-2 border-red-500 bg-sky-400">
+        <div className="flex-none md:flex lg:flex justify-evenly bg-sky-400 py-10">
           <Toaster></Toaster>
-           <div>
-           <h1 className="text-2xl">{Data.name}</h1>
+           <div className="shadow-xl text-gray-200 p-5">
+           <div className="flex justify-start items-center gap-2">
+            <div>  <img src={Data.productImageURL} className="h-10 w-10 rounded-full mt-6" alt="" /></div>
+            <h1 className="text-2xl font-bold mt-4">{Data.name}</h1>
+           </div>
            <h1>{Data.brand}</h1>
            <h1>{Data.title}</h1>
-           <h1></h1>
-           <img src={Data.productImageURL} className="h-10 w-10 rounded-full" alt="" />
+
+           <h1 className="text-[#de30be] font-bold mt-2">The Query Post By:</h1>
+          <div className="flex items-center gap-6 mt-2">
+          <div>  <img src={Data?.User?.userPhoto} className="h-5 w-5 rounded-full " alt="" /></div>
+          <div>
+          <h1>{Data?.User?.userName}</h1>
+          </div>
+          </div>
+           <h1>{Data?.User?.userEmail}</h1>
+          
+
            </div>
-            <div>
+            <div className="shadow-xl p-4 ">
             <form onSubmit={handleAddRecommendation}>
   <div>
     <label>
@@ -105,7 +117,7 @@ const handleAddRecommendation = async (event) => {
       <input name="RecomReason"  placeholder="Recommendation Reason" className="input input-bordered w-full max-w-xs" required></input>
     </label>
   </div>
-  <button className="btn btn-sm mt-2" type="submit">Submit</button>
+  <button className="btn btn-sm mt-2 bg-[#de30be] text-white" type="submit">Submit</button>
 </form>
 
               

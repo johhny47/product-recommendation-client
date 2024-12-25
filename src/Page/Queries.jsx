@@ -73,8 +73,8 @@ const Queries = () => {
               <div className="md:badge md:badge-secondary lg:badge lg:badge-secondary bg-pink-400 text-sm mt-1 rounded-md p-1">
                 {data.brand}
               </div>
-              <h2 className="text-sm card-title flex-shrink">{data.name}</h2>
-              <p className="font-bold text-sm md:text-lg lg:text-xl flex-shrink">{data.title}</p>
+              <h2 className="font-bold text-sm md:text-lg lg:text-xl flex-shrink">{data.name}</h2>
+              <p className="font-semibold text-sm md:text-lg lg:text-lg flex-shrink">{data.title}</p>
               <p className="text-gray-400 text-sm md:text-xl lg:text-xl">
                 {data.BoycottingReason}
               </p>
