@@ -17,6 +17,7 @@ const ViewDetails = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
           fetchalldata() 
+            document.title = "Recomify | ViewDetails"
       },[id])
   
           const fetchalldata =async() =>{

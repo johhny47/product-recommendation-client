@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import AuthContext from "../context/AuthContext/AuthContext";
@@ -59,7 +59,9 @@ const Login = () => {
        }}
 
       
-
+       useEffect(()=>{
+            document.title = "Recomify | Login"
+       },[])
       
 
     return (

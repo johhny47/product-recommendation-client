@@ -15,7 +15,7 @@ const Update = () => {
      const [productData, setProductData] = useState([]);
       useEffect(() => {
         fetchalldata()
-        
+          document.title = "Recomify | Update"
             }
             
         ,[id])

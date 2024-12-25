@@ -28,6 +28,7 @@ const MyQueries = () => {
             const {data}= await axiosSucure.get(`/queries/search?userEmail=${userEmail}`)
             setProductData(data)
             setLoading(false)
+              document.title = "Recomify | MyQueries"
         }
     
 

@@ -17,6 +17,7 @@ const Queries = () => {
       setLoading(false);
     };
     fetchAllQueries();
+    document.title = "Recomify | Queries"
   }, [search]);
 
   const updateGridColumns = (columns) => {

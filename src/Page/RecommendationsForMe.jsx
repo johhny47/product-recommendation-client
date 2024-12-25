@@ -22,7 +22,7 @@ const RecommendationsForMe = () => {
            
                }     
                fetchAllqueries()
-             
+               document.title = "Recomify | RecommendationForMe"
              }, [email]);
              if(loading) return <div className='mx-auto h-14 w-14'>
              <span className="loading loading-spinner mx-auto text-error"></span>

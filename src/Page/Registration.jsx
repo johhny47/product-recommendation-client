@@ -22,7 +22,7 @@ const Registration = () => {
        
       }
     useEffect(()=>{
-      document.title = "Qurery | Register"
+      document.title = "Recomify | Register"
      },[])
      
     return (

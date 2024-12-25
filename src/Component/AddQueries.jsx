@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -53,6 +53,9 @@ const handleAddEquipment =async e =>{
    
  
 }
+useEffect(()=>{
+     document.title = "Recomify | AddQueries"
+},[])
 
     return (
         <div className="w-8/12 mx-auto">

@@ -18,6 +18,7 @@ const MyRecommendations = () => {
   
     useEffect(() => {
         fetchAllqueries() 
+         document.title = "Recomify | MyRecommendation"
     },[email])
 
              const fetchAllqueries= async ()=>{
@@ -52,7 +53,7 @@ const MyRecommendations = () => {
                  if(loading) return <div className='mx-auto h-14 w-14'>
                  <span className="loading loading-spinner mx-auto text-error"></span>
             </div>         
-   
+  
     return (
 
         <div className="overflow-x-auto mt-10">
