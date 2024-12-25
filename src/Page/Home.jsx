@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Banner from "../Component/Banner";
 import HomeCard from "../Component/HomeCard";
+import Blog from "../Component/Blog";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <HomeCard></HomeCard>
+            <Blog></Blog>
         </div>
     );
 };
