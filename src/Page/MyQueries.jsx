@@ -16,9 +16,8 @@ const MyQueries = () => {
     const userEmail = user?.email;
     
     const [productData, setProductData] = useState([]);
-    // const [loading, setLoading] = useState(true);
-    // const [error, setError] = useState(null);
-    // const [myuser,setMyuser] = useState(productData)
+    const [loading, setLoading] = useState(true);
+ 
     const [gridColumns, setGridColumns] = useState(3);
 
     useEffect(() => {
@@ -28,6 +27,7 @@ const MyQueries = () => {
         const fetchalldata =async() =>{
             const {data}= await axiosSucure.get(`/queries/search?userEmail=${userEmail}`)
             setProductData(data)
+            setLoading(false)
         }
     
 
@@ -54,8 +54,13 @@ const MyQueries = () => {
             setGridColumns(columns);
           };
 
+       if(loading) return <div className='mx-auto h-14 w-14'>
+        <span className="loading loading-spinner mx-auto text-error"></span>
+   </div>
+
     return (
         <div>
+            
            <img src={banner} alt="" />
           <div className="bg-gradient-to-t from-cyan-500 to-blue-500 h-40 flex items-center justify-center">
           <Link to="addqueries">

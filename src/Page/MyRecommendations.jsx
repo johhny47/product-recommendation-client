@@ -11,9 +11,10 @@ const MyRecommendations = () => {
     const axiosSucure = useAxiosSecure()
     const{user}=useContext(AuthContext)
     const email = user?.email
-    // const id = user?._id
+   
     const {id} = useParams()
     const [myData,setMydata]=useState([])
+    const [loading, setLoading] = useState(true);
   
     useEffect(() => {
         fetchAllqueries() 
@@ -22,6 +23,7 @@ const MyRecommendations = () => {
              const fetchAllqueries= async ()=>{
                 const {data}=await axiosSucure.get(`/myrecommendation/search?userEmail=${email}`)
                 setMydata(data)
+                setLoading(false)
               } 
 
            
@@ -47,7 +49,9 @@ const MyRecommendations = () => {
                
                
                  }
-                
+                 if(loading) return <div className='mx-auto h-14 w-14'>
+                 <span className="loading loading-spinner mx-auto text-error"></span>
+            </div>         
    
     return (
 

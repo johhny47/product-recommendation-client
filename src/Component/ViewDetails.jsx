@@ -14,6 +14,7 @@ const ViewDetails = () => {
    
     const {user}=useContext(AuthContext);
     const [Data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
           fetchalldata() 
       },[id])
@@ -21,6 +22,7 @@ const ViewDetails = () => {
           const fetchalldata =async() =>{
               const {data}= await axiosSucure.get(`/details/${id}`)
              setData(data)
+             setLoading(false)
             
             
           }
@@ -68,6 +70,9 @@ const handleAddRecommendation = async (event) => {
         }
   };
   
+  if(loading) return <div className='mx-auto h-14 w-14'>
+  <span className="loading loading-spinner mx-auto text-error"></span>
+</div>
 
     return (
         <div className="flex-none md:flex lg:flex justify-evenly bg-sky-400 py-10">

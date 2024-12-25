@@ -8,11 +8,13 @@ const Queries = () => {
   const [queries, setQueries] = useState([]);
   const [search, setSearch] = useState("");
   const [gridColumns, setGridColumns] = useState(3);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAllQueries = async () => {
       const { data } = await axiosSecure.get(`/queries?search=${search}`);
       setQueries(data);
+      setLoading(false);
     };
     fetchAllQueries();
   }, [search]);
@@ -44,6 +46,10 @@ const Queries = () => {
           onClick={() => updateGridColumns(3)}>3 Column</button>
        
       </div>
+
+     { loading && <div className='mx-auto h-14 w-14'>
+        <span className="loading loading-spinner mx-auto text-error"></span>
+   </div>}
 
       <div
         className={`grid gap-6 mx-auto ${

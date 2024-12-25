@@ -10,18 +10,23 @@ const RecommendationsForMe = () => {
     const{user}=useContext(AuthContext)
    
      const email =user?.email
-    //  console.log(email)
-    //  const{data}=axiosSucure.get(`/recomendationforme/search?userEmail=${email}`)
+   
      const [myData,setMydata]=useState([])
+     const [loading, setLoading] = useState(true);
       useEffect(() => {
                  
                const fetchAllqueries= async ()=>{
                  const {data}=await axiosSucure.get(`/recomendationforme/search?userEmail=${email}`)
                  setMydata(data)
+                 setLoading(false)
+           
                }     
                fetchAllqueries()
-           
+             
              }, [email]);
+             if(loading) return <div className='mx-auto h-14 w-14'>
+             <span className="loading loading-spinner mx-auto text-error"></span>
+        </div>
    
     return (
         <div className="overflow-x-auto mt-10">
