@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const ViewDetails = () => {
   const{id} = useParams()
   const axiosSucure = useAxiosSecure()
-    // const data = useLoaderData();
+  
    
     const {user}=useContext(AuthContext);
     const [Data, setData] = useState([]);
