@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import posts from './Blogdata'
 
 
-
-const Blog = () => {
-    const [posts, setPosts] = useState([]);
-    useEffect(()=>{
-        fetch("../../public/blog.json")
-        .then(response => response.json())
-        .then(data => setPosts(data))
-    },[])
+const Blog = ({}) => {
+   
   return (
     <div className="bg-gray-100 min-h-screen mt-10">
         <h1 className='text-center text-4xl font-extrabold pt-20'>Recommendation System</h1>
