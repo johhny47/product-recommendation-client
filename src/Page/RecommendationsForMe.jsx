@@ -21,7 +21,7 @@ const RecommendationsForMe = () => {
                }     
                fetchAllqueries()
            
-             }, []);
+             }, [email]);
    
     return (
         <div className="overflow-x-auto mt-10">
@@ -40,7 +40,7 @@ const RecommendationsForMe = () => {
         <tbody>
           {/* row 1 */}
           {
-           myData.map((data,idx) => <tr className="bg-base-200">
+           myData.map((data,idx) => <tr key={idx} className="bg-base-200">
                  <th>{idx+1}</th>
                 <td>{data.recomProductName}</td>
                 <td>{data.RecommenderEmail}</td>
