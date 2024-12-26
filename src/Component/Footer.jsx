@@ -56,6 +56,7 @@ const Footer = () => {
               </svg>
             </a></Link>
           </div>
+          <h1 className="mt-4 font-bold text-3xl">Recomify</h1>
         </nav>
         
       </footer>
