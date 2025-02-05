@@ -11,8 +11,8 @@
 ### Overview
 Our platform is designed to help users evaluate products before making purchase decisions. It allows users to post product queries, share their experiences, and provide recommendations to others. The website aims to build a community of informed consumers who can rely on real-user feedback to make better purchasing decisions.
 ## 🔗 Links
-  Live Website Link : https://assignment11-5d0f3.web.app
-  Back-end Repo Link: https://github.com/johhny47/product-recommendation-Server
+Live Website Link : https://assignment11-5d0f3.web.app
+Back-end Repo Link: https://github.com/johhny47/product-recommendation-Server
 
 ## 🚀 Technologies used for front-end
 
@@ -28,7 +28,7 @@ Our platform is designed to help users evaluate products before making purchase 
 ## 🚀 Technologies used for back-end
 
 <p align="center">
-    < <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
+     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express.js" width="40" height="40"/>
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40"/>
 </p>
