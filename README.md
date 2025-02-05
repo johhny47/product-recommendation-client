@@ -1,4 +1,4 @@
-![I](https://i.ibb.co.com/WNWFdZWr/Screenshot-2025-02-05-110723.png)
+![I](https://i.ibb.co.com/jPdx9VVJ/Screenshot-2025-02-05-112205.png)
 # Recomify
 
 
