@@ -75,18 +75,15 @@ Follow these steps to set up the project locally:
    git clone https://github.com/your-username/project-name.git
 2. **Navigate into the project directory:**
    ```bash
-
-cd project-name
+   cd project-name
 3. **Install the dependencies:**
     ```bash
-
-npm install
+    npm install
 Usage
 4. **To start the development server, run:**
 
     ```bash
-
-npm start
+    npm start
 #### 5. This will launch the project on http://localhost:3000.
 License
 This project is licensed under the MIT License.
