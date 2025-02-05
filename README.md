@@ -12,7 +12,7 @@
 Our platform is designed to help users evaluate products before making purchase decisions. It allows users to post product queries, share their experiences, and provide recommendations to others. The website aims to build a community of informed consumers who can rely on real-user feedback to make better purchasing decisions.
 ## 🔗 Links
  Live Website Link : https://assignment11-5d0f3.web.app
- Back-end Repo Link: https://github.com/johhny47/product-recommendation-Server
+  Back-end Repo Link: https://github.com/johhny47/product-recommendation-Server
 
 ## 🚀 Technologies used for front-end
 
