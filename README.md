@@ -81,7 +81,6 @@ Follow these steps to set up the project locally:
     npm install
 Usage
 4. **To start the development server, run:**
-
     ```bash
     npm start
 #### 5. This will launch the project on http://localhost:3000.
