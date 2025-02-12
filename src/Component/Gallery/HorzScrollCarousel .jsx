@@ -33,9 +33,9 @@ const HorzScrollCarousel = () => {
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
     return (
-        <section ref={targetRef} className="relative h-[300vh] bg-gray-300">
+        <section ref={targetRef} className="relative h-[300vh] bg-gray-100 ">
 
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+            <div className="sticky top-10 flex h-screen items-center overflow-hidden">
                 <motion.div style={{ x }} className="flex gap-4">
                     {cards.map((card) => {
                         return <Card card={card} key={card.id} />;

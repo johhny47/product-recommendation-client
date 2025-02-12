@@ -59,7 +59,7 @@ import ErrorPage from "./Component/ErrorPage";
         {
           path: "details/:id",
           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          // loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/details/${params.id}`)
+        
         },
         {
           path: "update/:id",

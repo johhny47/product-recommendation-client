@@ -11,7 +11,7 @@ const Home = () => {
     },[])
     return (
         <div>
-            <Banner></Banner>
+           
             <HomeCard></HomeCard>
             <Gallery></Gallery>
             <Blog></Blog>

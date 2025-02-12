@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
-
 import 'swiper/css';
 import 'swiper/swiper-bundle.css'
 import banner1 from '../assets/sample-1.jpg'
 import banner2 from '../assets/sample-2.jpg'
 import banner3 from '../assets/sample-3.jpg'
-import { motion, useScroll } from "motion/react"
+
+
 
 const Banner = () => {
 
