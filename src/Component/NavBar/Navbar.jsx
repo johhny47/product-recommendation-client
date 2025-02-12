@@ -110,7 +110,7 @@ const Navbar = () => {
       <img
                 src={user.photoURL}
                 alt="User"
-                className="h-10 w-10 rounded-full border-2 white"
+                className="w-6 h-6 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full border-2 white"
               /></div> : <div>
                 <ul>
                 <NavLink to="/login"><li><a className="flex items-center gap-1"> <FaSignInAlt></FaSignInAlt> Login</a></li></NavLink>
