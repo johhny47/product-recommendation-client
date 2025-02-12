@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="flex justify-around p-4  bg-sky-300  text-base-content  ">
+      <>
+       <footer className="flex justify-around p-4   bg-primary text-white dark:bg-gray-800 dark:text-white ">
        <nav>
        <h1 className="mt-4 font-bold text-xl md:text-3xl">Recomify</h1>
        </nav>
@@ -48,9 +49,16 @@ const Footer = () => {
           </div>
        
         </nav>
-        
+       
       </footer>
+       <footer className="footer footer-center bg-primary text-white dark:bg-gray-800 dark:text-white p-4">
+       <aside>
+         <p>Copyright © {new Date().getFullYear()} - All right reserved by Recomify</p>
+       </aside>
+     </footer>
      
+      </>
+       
     );
 };
 
