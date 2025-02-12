@@ -32,7 +32,7 @@ const SeeMore = () => {
    
 
   
-  if(loading) return <div className='mx-auto h-14 w-14 my-20'>
+  if(loading) return <div className='mx-auto h-14 w-14 my-28'>
   <span className="loading loading-spinner mx-auto text-error"></span>
 </div>
 
