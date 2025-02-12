@@ -15,6 +15,7 @@ import ViewDetails from "./Component/ViewDetails";
 import Update from './Component/Update';
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ErrorPage from "./Component/ErrorPage";
+import SeeMore from "./Component/SeeMore";
 
 
   const router = createBrowserRouter([
@@ -59,6 +60,11 @@ import ErrorPage from "./Component/ErrorPage";
         {
           path: "details/:id",
           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        
+        },
+        {
+          path: "seemore/:id",
+          element:<PrivateRoute><SeeMore></SeeMore></PrivateRoute>,
         
         },
         {

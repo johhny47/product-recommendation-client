@@ -6,6 +6,7 @@ import useAxiosSecure from '../hook/useAxiosSecure';
 import { Link, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
+import { FaTrash } from 'react-icons/fa';
 
 const MyRecommendations = () => {
     const axiosSucure = useAxiosSecure()
@@ -50,7 +51,7 @@ const MyRecommendations = () => {
                
                
                  }
-                 if(loading) return <div className='mx-auto h-14 w-14'>
+                 if(loading) return <div className='mx-auto h-14 w-14 my-20'>
                  <span className="loading loading-spinner mx-auto text-error"></span>
             </div>         
   
@@ -77,7 +78,7 @@ const MyRecommendations = () => {
                 <td>{data.userEmail}</td>
              
                 <td>{data.recomReason}</td>
-                <td className="badge badge-outline"> <button onClick={()=>handleDelete(data._id)}>Delete</button></td>
+                <td className='text-red-500'> <button onClick={()=>handleDelete(data._id)}><FaTrash></FaTrash></button></td>
               </tr>)
           }
         

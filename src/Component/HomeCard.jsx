@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../hook/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const HomeCard = () => {
   const axiosSecure = useAxiosSecure();
@@ -41,9 +42,14 @@ const HomeCard = () => {
 
            
                 <div>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200">
+                <Link  to={`/seemore/${item._id}`}
+                 >
+                 
+                 <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200">
                     See more
                   </button>
+                </Link>
+                  
                 </div>
               </div>
             </div>
