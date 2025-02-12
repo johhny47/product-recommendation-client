@@ -15,7 +15,7 @@ const MyQueries = () => {
   
   const [productData, setProductData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [gridColumns, setGridColumns] = useState(3);
+ 
 
   useEffect(() => {
     fetchalldata();
@@ -44,10 +44,7 @@ const MyQueries = () => {
     }
   };
 
-  const updateGridColumns = (columns) => {
-    setGridColumns(columns);
-  };
-
+  
   if (loading) {
     return (
       <div className="mx-auto h-14 w-14 my-20">
@@ -68,34 +65,8 @@ const MyQueries = () => {
         </Link>
       </div>
 
-      <div className="my-4 flex justify-center gap-2">
-        <button
-          className="btn btn-primary px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
-          onClick={() => updateGridColumns(1)}
-        >
-          1 Column
-        </button>
-        <button
-          className="btn btn-primary px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
-          onClick={() => updateGridColumns(2)}
-        >
-          2 Columns
-        </button>
-        <button
-          className="btn btn-primary px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
-          onClick={() => updateGridColumns(3)}
-        >
-          3 Columns
-        </button>
-      </div>
-
-      <div className={`grid gap-1 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-5 mx-auto ${
-        gridColumns === 1
-          ? "grid-cols-1"
-          : gridColumns === 2
-          ? "grid-cols-2"
-          : "grid-cols-3"
-      }`}>
+      
+      <div className="grid gap-1 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-5 mx-auto mt-10">
         {
           productData.map(data => (
             <MyQueriesCard key={data._id} handleDelete={handleDelete} data={data} />
