@@ -57,7 +57,7 @@ const MyRecommendations = () => {
   
     return (
 
-        <div className="overflow-x-auto mt-10">
+        <div className="overflow-x-auto mt-10 ">
         <table className="table">
         {/* head */}
         <thead>

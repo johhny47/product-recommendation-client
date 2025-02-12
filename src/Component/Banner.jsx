@@ -5,11 +5,11 @@ import 'swiper/swiper-bundle.css';
 import { motion } from 'framer-motion';
 import banner1 from '../assets/sample-1.jpg';
 import banner2 from '../assets/sample-2.jpg';
-import banner3 from '../assets/sample-3.jpg';
+
 import banner4 from '../assets/sample-4.jpg';
 const Banner = () => {
   return (
-    <div className=" mt-16">
+    <div className="mt-16 ">
       <Swiper
         modules={[Autoplay]}  
         spaceBetween={50}
@@ -34,9 +34,7 @@ const Banner = () => {
         <SwiperSlide>
           <img src={banner4} alt="Banner 4" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={banner3} alt="Banner 3" />
-        </SwiperSlide>
+       
        
       </Swiper>
     </div>

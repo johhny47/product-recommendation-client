@@ -4,15 +4,28 @@ import Footer from "../Component/Footer";
 import Navbar from "../Component/NavBar/Navbar";
 
 
+
+
 const MainLayout = () => {
+    
+
+   
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto ">
             <Navbar></Navbar>
-            <div className="min-h-[calc(100vh-150px)] w-full mx-auto">
+            <div className="min-h-[calc(100vh-180px)] w-full mx-auto">
               <Outlet></Outlet>
             </div>
-            <Footer></Footer>
-        </div>
+           
+       
+      <Footer></Footer>
+          
+</div>
+
+
+
+
+    
     );
 };
 

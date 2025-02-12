@@ -24,12 +24,12 @@ const RecommendationsForMe = () => {
                fetchAllqueries()
                document.title = "Recomify | RecommendationForMe"
              }, [email]);
-             if(loading) return <div className='mx-auto h-14 w-14'>
+             if(loading) return <div className='mx-auto h-14 w-14 my-20'>
              <span className="loading loading-spinner mx-auto text-error"></span>
         </div>
    
     return (
-        <div className="overflow-x-auto mt-10">
+        <div className="overflow-x-auto mt-10  ">
         <table className="table">
         {/* head */}
         <thead>

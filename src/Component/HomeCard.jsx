@@ -15,8 +15,8 @@ const HomeCard = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-100 py-8">
-         <h1 className="text-center font-bold text-4xl"> Recent products</h1>
+    <div className="w-full bg-gray-100 dark:bg-black dark:text-white py-8">
+         <h1 className="text-center font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl"> Recent products</h1>
       <div className="max-w-7xl mx-auto px-4">
     
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">

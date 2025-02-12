@@ -19,7 +19,7 @@ const Queries = () => {
   }, [search]);
 
   return (
-    <div className="px-4 py-20">
+    <div className="px-4 py-20 dark:bg-black dark:text-white">
       <div className="my-4">
         <label className="input input-bordered max-w-40 mx-auto flex items-center gap-2">
           <input

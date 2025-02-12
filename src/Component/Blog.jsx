@@ -6,10 +6,10 @@ import posts from './Blogdata'
 const Blog = ({}) => {
    
   return (
-    <div className="bg-gray-100 min-h-screen -mt-10 p-4">
+    <div className="bg-gray-100 dark:bg-black dark:text-white min-h-screen -mt-8 ">
         <h1 className='text-center text-xl  md:text-4xl font-extrabold pt-10'>Recommendation System</h1>
         <p className='text-center text-xs  md:text-lg mt-4 text-gray-400'>A recommendation system or recommender system is a class of machine learning that uses data to help predict, narrow down, <br />and find what people are looking for among an exponentially growing number of options.</p>
-      <div className="container mx-auto py-16">
+      <div className="container mx-auto py-10 p-3">
         {posts.map((blog, index) => (
           <motion.div
             key={blog.id}
@@ -32,7 +32,7 @@ const Blog = ({}) => {
                 className="rounded-lg shadow-lg"
               />
             </motion.div>
-            <div className="md:w-1/2 text-gray-800">
+            <div className="md:w-1/2 text-gray-800 dark:bg-black dark:text-white">
               <h2 className="text-2xl font-bold mb-4">{blog.title}</h2>
               <p>{blog.content}</p>
             </div>

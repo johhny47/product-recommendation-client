@@ -1,29 +1,41 @@
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext/AuthContext";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import "./navbar.css";
 import logo from "../../assets/logo2.webp";
 
-import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaSignInAlt, FaSignOutAlt, FaMoon, FaSun } from "react-icons/fa";
+
 const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); 
+  };
+
+ 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const link = (
     <>
-    
-
-      {user ? 
+      {user ? (
         <div className="lg:flex">
           <NavLink to="/">
-        <li>
-          <a>Home</a>
-        </li>
-      </NavLink>
-      <NavLink to="/queries">
-        <li>
-          <a>Queries</a>
-        </li>
-      </NavLink>
+            <li>
+              <a>Home</a>
+            </li>
+          </NavLink>
+          <NavLink to="/queries">
+            <li>
+              <a>Queries</a>
+            </li>
+          </NavLink>
           <NavLink to="/recommendationforme">
             <li>
               <a>Recommendation For Me</a>
@@ -39,28 +51,27 @@ const Navbar = () => {
               <a>My Recommendation</a>
             </li>
           </NavLink>
-        
-        </div>: <div className="lg:flex">
-        <NavLink to="/">
-        <li>
-          <a>Home</a>
-        </li>
-      </NavLink>
-      <NavLink to="/queries">
-        <li>
-          <a>Queries</a>
-        </li>
-      </NavLink>
         </div>
-     }
+      ) : (
+        <div className="lg:flex">
+          <NavLink to="/">
+            <li>
+              <a>Home</a>
+            </li>
+          </NavLink>
+          <NavLink to="/queries">
+            <li>
+              <a>Queries</a>
+            </li>
+          </NavLink>
+        </div>
+      )}
     </>
   );
 
   return (
-    <div className="bg-primary w-full fixed top-0 left-0 z-50">
-    
+    <div className="bg-primary dark:bg-gray-800 dark:text-white w-full fixed top-0 left-0 z-50">
       <div className="navbar max-w-7xl mx-auto px-4">
-      
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -105,22 +116,49 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end text-white font-bold">
-        {
-      user ?  <div className="flex md:order-2 gap-4 items-center">   <ul><NavLink to="/"><li ><a className="flex items-center gap-1" onClick={handleLogout} ><h1><span className="hidden md:flex">Logout</span></h1> <FaSignOutAlt ></FaSignOutAlt></a></li>  </NavLink></ul>
-      <img
+          {user ? (
+            <div className="flex md:order-2 gap-4 items-center">
+              <ul>
+                <NavLink to="/">
+                  <li>
+                    <a
+                      className="flex items-center gap-1"
+                      onClick={handleLogout}
+                    >
+                      <h1>
+                        <span className="hidden md:flex">Logout</span>
+                      </h1>{" "}
+                      <FaSignOutAlt />
+                    </a>
+                  </li>
+                </NavLink>
+              </ul>
+              <img
                 src={user.photoURL}
                 alt="User"
-                className="w-6 h-6 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full border-2 white"
-              /></div> : <div>
-                <ul>
-                <NavLink to="/login"><li><a className="flex items-center gap-1"> <FaSignInAlt></FaSignInAlt> Login</a></li></NavLink>
-                </ul>
-                   
-              </div>
-     
-      
-     }
-     
+                className="w-7 h-7 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full border-2 white"
+              />
+            </div>
+          ) : (
+            <div>
+              <ul>
+                <NavLink to="/login">
+                  <li>
+                    <a className="flex items-center gap-1">
+                      <FaSignInAlt />
+                      Login
+                    </a>
+                  </li>
+                </NavLink>
+              </ul>
+            </div>
+          )}
+          <button
+            onClick={toggleTheme}
+            className="ml-4 p-1 md:p-2 md:mx-2   text-white bg-transparent border border-white rounded-full"
+          >
+            {theme === 'light' ? <FaMoon  /> : <FaSun />}
+          </button>
         </div>
       </div>
     </div>

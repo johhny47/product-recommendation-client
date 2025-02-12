@@ -3,7 +3,7 @@ import Banner from "../Component/Banner";
 import HomeCard from "../Component/HomeCard";
 import Blog from "../Component/Blog";
 import Gallery from "../Component/Gallery/Gallery";
-
+import Features from "../Component/Features";
 
 const Home = () => {
     useEffect(()=>{
@@ -15,6 +15,7 @@ const Home = () => {
             <HomeCard></HomeCard>
             <Gallery></Gallery>
             <Blog></Blog>
+            <Features></Features>
         </div>
     );
 };
