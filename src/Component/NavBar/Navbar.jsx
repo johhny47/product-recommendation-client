@@ -105,7 +105,7 @@ const Navbar = () => {
                 className="w-5 h-5 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full"
               />
               <a className="mx-2 text-xl md:text-xl lg:text-3xl font-bold text-white">
-                Recomfy
+                Recomfiiy
               </a>
             </div>
           </Link>
