@@ -1,0 +1,32 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted   
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies & build
+        run: |
+          npm install
+          npm run build
+
+      - name: Copy build to Nginx directory
+        run: |
+          sudo cp -r build/* /var/www/react-app/
+
+      - name: Restart Nginx
+        run: |
+          sudo systemctl restart nginx
